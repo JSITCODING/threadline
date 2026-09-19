@@ -1,0 +1,90 @@
+[
+  {
+    "id": "project-conversation",
+    "title": "Define a useful project milestone",
+    "create_time": 1789689600,
+    "update_time": 1789689660,
+    "current_node": "p2",
+    "mapping": {
+      "root": { "id": "root", "parent": null, "message": null },
+      "p1": {
+        "id": "p1",
+        "parent": "root",
+        "message": {
+          "id": "pm1",
+          "author": { "role": "user" },
+          "create_time": 1789689600,
+          "content": { "parts": ["Quero transformar conversas úteis em propostas de memória revisáveis."] }
+        }
+      },
+      "p2": {
+        "id": "p2",
+        "parent": "p1",
+        "message": {
+          "id": "pm2",
+          "author": { "role": "assistant" },
+          "create_time": 1789689660,
+          "content": { "parts": ["Start with import, normalization, explicit approval, and rollback."] }
+        }
+      },
+      "unused": {
+        "id": "unused",
+        "parent": "p1",
+        "message": {
+          "id": "pm-unused",
+          "author": { "role": "assistant" },
+          "content": { "parts": ["This abandoned branch must not be imported."] }
+        }
+      }
+    }
+  },
+  {
+    "id": "private-conversation",
+    "title": "Relationship reflection",
+    "create_time": 1789693200,
+    "update_time": 1789693260,
+    "current_node": "r2",
+    "mapping": {
+      "r1": {
+        "id": "r1",
+        "parent": null,
+        "message": {
+          "id": "rm1",
+          "author": { "role": "user" },
+          "content": { "parts": ["I want to communicate honestly without trying to control the outcome."] }
+        }
+      },
+      "r2": {
+        "id": "r2",
+        "parent": "r1",
+        "message": {
+          "id": "rm2",
+          "author": { "role": "assistant" },
+          "content": { "parts": ["Preserve the principle, not private names or the transcript."] }
+        }
+      }
+    }
+  },
+  {
+    "id": "ephemeral-conversation",
+    "title": "Breakfast choice",
+    "create_time": 1789696800,
+    "current_node": "e1",
+    "mapping": {
+      "e1": {
+        "id": "e1",
+        "parent": null,
+        "message": {
+          "id": "em1",
+          "author": { "role": "user" },
+          "content": {
+            "parts": [
+              "Should I have rice or cake?",
+              { "asset_pointer": "file-service://synthetic-image", "name": "example.png", "mime_type": "image/png" }
+            ]
+          }
+        }
+      }
+    }
+  }
+]
