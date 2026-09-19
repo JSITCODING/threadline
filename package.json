@@ -1,0 +1,24 @@
+{
+  "name": "threadline",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local-first, review-gated bridge from AI conversations to durable Markdown knowledge",
+  "license": "MIT",
+  "packageManager": "pnpm@11.19.0",
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc -b --pretty false",
+    "test": "pnpm build && node --test packages/core/dist/*.test.js",
+    "lint": "node scripts/lint.mjs",
+    "check": "pnpm lint && pnpm typecheck && pnpm test",
+    "threadline": "pnpm --silent build && node apps/cli/dist/main.js"
+  },
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "commander": "^14.0.1",
+    "zod": "^4.1.11"
+  }
+}
